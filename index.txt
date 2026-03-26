@@ -1,0 +1,50 @@
+# ===== SETTINGS =====
+$START_DATE = Get-Date "2026-03-20"
+$END_DATE   = Get-Date       # today
+$COMMITS_PER_DAY = 3         # commits per day
+$FILE = "index.html"         # file to modify
+
+# ===== LOOP =====
+$current = $START_DATE
+
+while ($current -le $END_DATE) {
+
+    for ($i=1; $i -le $COMMITS_PER_DAY; $i++) {
+
+        # Add something unique so Git commits
+        Add-Content $FILE ("<!-- Commit $i on " + $current.ToString("yyyy-MM-dd") + " -->")
+
+        # ISO 8601 format for Git
+        $dateString = $current.ToString("yyyy-MM-dd") + "T12:$i:00"
+
+        $env:GIT_AUTHOR_DATE = $dateString
+        $env:GIT_COMMITTER_DATE = $dateString
+
+        git add $FILE
+        git commit -m "Commit $i on $($current.ToString('yyyy-MM-dd'))"
+    }
+
+    $current = $current.AddDays(1)
+}
+
+git push -u origin main<!-- Commit 1 on 2026-03-20 -->
+<!-- Commit 2 on 2026-03-20 -->
+<!-- Commit 3 on 2026-03-20 -->
+<!-- Commit 1 on 2026-03-21 -->
+<!-- Commit 2 on 2026-03-21 -->
+<!-- Commit 3 on 2026-03-21 -->
+<!-- Commit 1 on 2026-03-22 -->
+<!-- Commit 2 on 2026-03-22 -->
+<!-- Commit 3 on 2026-03-22 -->
+<!-- Commit 1 on 2026-03-23 -->
+<!-- Commit 2 on 2026-03-23 -->
+<!-- Commit 3 on 2026-03-23 -->
+<!-- Commit 1 on 2026-03-24 -->
+<!-- Commit 2 on 2026-03-24 -->
+<!-- Commit 3 on 2026-03-24 -->
+<!-- Commit 1 on 2026-03-25 -->
+<!-- Commit 2 on 2026-03-25 -->
+<!-- Commit 3 on 2026-03-25 -->
+<!-- Commit 1 on 2026-03-26 -->
+<!-- Commit 2 on 2026-03-26 -->
+<!-- Commit 3 on 2026-03-26 -->
