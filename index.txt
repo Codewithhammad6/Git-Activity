@@ -4,7 +4,7 @@ $END_DATE   = Get-Date       # today
 $COMMITS_PER_DAY = 3         #         
 $FILE = "index.html"         # file to modify  
 
-# ===== LOOP =====  
+# ===== LOOP =====  n
 $current = $START_DATE 
  
 while ($current -le $END_DATE) {
