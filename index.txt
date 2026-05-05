@@ -5,7 +5,7 @@ $COMMITS_PER_DAY = 3         #
 $FILE = "index.html"         # file to modify   
  
 # ===== LOOP =====
-$current = $START_DATE 
+$current = $START_DATE  
   
 while ($current -le $END_DATE) { 
 
