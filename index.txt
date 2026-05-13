@@ -1,6 +1,6 @@
  # ===== SETTINGS =====
 $START_DATE = Get-Date "2026-03-20"
-$END_DATE   = Get-Date       # today  
+$END_DATE   = Get-Date       # today   
 $COMMITS_PER_DAY = 3         #          
 $FILE = "index.html"         # file to modify   
   
