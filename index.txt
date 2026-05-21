@@ -10,7 +10,7 @@ $current = $START_DATE
 while ($current -le $END_DATE) {   
 
     for ($i=1; $i -le $COMMITS_PER_DAY; $i++) { 
- 
+  
         # Add something unique so Git  
         Add-Content $FILE ("<!-- Commit $i on " + $current.ToString("yyyy-MM-dd") + " -->")
 
